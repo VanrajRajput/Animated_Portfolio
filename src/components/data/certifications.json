@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "title": "IBM Data Science Professional Certificate",
+      "description": "Completed the IBM Data Science Professional Certificate, covering Python, Data Analysis, and Machine Learning with 12 courses.",
+      "viewLink": "../pdf/Coursera_Datascience.pdf"
+    },
+    {
+      "id": 2,
+      "title": "IBM Back-End Development Professional Certificate",
+      "description": "Completed the IBM Back-End Development Certificate with 11 courses on key back-end technologies, including Python, SQL, Django, Docker, and Kubernetes.",
+      "viewLink": "../pdf/Coursera_backend.pdf"
+    },
+    {
+      "id": 3,
+      "title": "IBM Front-End Developer Professional Certificate",
+      "description": "Completed the IBM Front-End Developer Certificate with 11 courses on HTML, CSS, JavaScript, React JS, and UI/UX best practices.",
+      "viewLink": "../pdf/Coursera_frontend.pdf"
+    }
+  ]
+  

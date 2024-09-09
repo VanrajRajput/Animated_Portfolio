@@ -1,33 +1,33 @@
 [
   {
     "key": 1,
-    "title": "React E-Commerce",
-    "imageSrc": "https://cdn.pixabay.com/photo/2018/02/04/17/39/crypto-currency-3130381_640.jpg",
-    "description": "This is a project made with complete React js.",
+    "title": "Python Automatic Attendance System with OpenCV",
+    "imageSrc": "skills/opencv.png",
+    "description": "Built an automatic attendance system using Python and OpenCV with facial recognition technology to identify students and automatically mark their attendance.",
     "demo": "https://www.example.com",
     "source": "https://www.github.com"
   },
   {
     "key": 2,
-    "title": "MERN Blogging",
-    "imageSrc": "https://cdn.pixabay.com/photo/2017/05/02/15/30/streets-2278471_640.jpg",
-    "description": "This is a project made with complete React js.",
+    "title": "Intelligent Inventory Manager Chatbot",
+    "imageSrc": "skills/chatbot.png",
+    "description": "Developed an intelligent customer support chatbot using NLP, SpaCy, NLTK, TensorFlow, and Hugging Face Transformers. Built with Python, Flask, React, and PostgreSQL.",
     "demo": "https://www.example.com",
     "source": "https://www.github.com"
   },
   {
     "key": 3,
-    "title": "React Recipe",
-    "imageSrc": "https://cdn.pixabay.com/photo/2016/08/16/17/12/skyscrapers-1598418_640.jpg",
-    "description": "This is a project made with complete React js.",
+    "title": "Music Website",
+    "imageSrc": "skills/music.png",
+    "description": "Designed and developed a music website using HTML, CSS, JavaScript, and backend technologies like Node.js, Express.js, and React with features like audio players and user authentication.",
     "demo": "https://www.example.com",
     "source": "https://www.github.com"
   },
   {
     "key": 4,
-    "title": "React Firebase App",
-    "imageSrc": "https://cdn.pixabay.com/photo/2021/03/02/01/07/cyberpunk-6061251_640.jpg",
-    "description": "This is a project made with complete React js.",
+    "title": "Stock Market Management System in Java",
+    "imageSrc": "skills/stock.png",
+    "description": "Created a stock market management system in Java that allows users to simulate stock trading, view market trends, and manage their portfolio.",
     "demo": "https://www.example.com",
     "source": "https://www.github.com"
   }

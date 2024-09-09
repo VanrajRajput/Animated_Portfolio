@@ -1,142 +1,95 @@
-:root{
-    --box-shadow:5px 5px 10px 10px rgba(101,175,10,.5);
-    --bg-color:rgb(40,47,97);
+:root {
+  --box-shadow: 5px 5px 10px 10px rgba(101, 175, 10, 0.5);
+  --bg-color: rgb(40, 47, 97);
 }
-body {
-    background-color: rgb(11, 26, 51);
-    color: white;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Basic link styles */
-  a {
-    text-decoration: none;
-    color: white;
-  }
-  
-  /* Container styles */
-  /* .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-  } */
-  
-  /* Navigation bar styles */
-  .nav_bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-  
-  /* Individual nav items */
-  .nav_bar .nav_items {
-    padding: 16px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    position: relative;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  /* Hover animation - underline and color transition */
-  .nav_bar .nav_items:hover {
-    color: yellow;
-    border-bottom: 2px solid yellow;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-  }
-  
-  /* Link animations */
-  .nav_items::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: yellow;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .nav_items:hover::before {
-    visibility: visible;
-    transform: scaleX(1);
-  }
-  
-  /* Media query for responsiveness */
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .nav_bar {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .nav_bar .nav_items {
-      padding: 8px 0;
-      font-size: 1rem;
-      width: 100%;
-      text-align: left;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .nav_bar .nav_items {
-      font-size: 0.9rem;
-      padding: 10px 0;
-    }
-  }
-  /* Navigation bar styles ENDS HERE */
 
-  /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-  /* Home page start from here */
- /* Home page styles */
- .home {
+body {
+  background-color: rgb(11, 26, 51);
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Navbar Section */
+.nav_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px; /* Add padding to the sides for better spacing */
+  background-color:  rgb(11, 26, 51); /* Add background color for contrast */
+}
+
+.nav_bar .nav_items {
+  padding: 16px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  position: relative; /* Required for the animation effect */
+  transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition for color and border */
+}
+
+.nav_bar .nav_items:hover {
+  border-bottom: 3px solid yellow;
+  color: yellow; /* Change text color on hover for effect */
+}
+
+.nav_bar .nav_items::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background-color: yellow;
+  transition: width 0.3s ease; /* Smooth transition for underline effect */
+}
+
+.nav_bar .nav_items:hover::before {
+  width: 100%; /* Underline grows to full width on hover */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .nav_bar {
+    flex-direction: column; /* Stack items vertically on small screens */
+  }
+
+  .nav_bar .nav_items {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+}
+
+
+/* Home Section */
+
+.home {
   height: 80vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  flex-direction: row; /* Default layout */
 }
 
-/* Left section styling */
 .home .left {
   background-color: var(--bg-color);
-  width: 620px;
-  min-height: 300px; /* Fixed height to prevent resizing */
+  width: 100%; /* Adjust width to be responsive */
+  max-width: 620px; /* Limit maximum width */
   text-align: center;
   padding: 30px;
   border-radius: 10px;
   border: 1px solid yellow;
   box-shadow: var(--box-shadow);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden; /* Ensure that no overflow occurs */
+  margin: 0 auto; /* Center horizontally */
 }
 
-/* Ensure text animates but the container doesn't resize */
-.home .left h1 {
-  font-size: 2rem;
-  line-height: 1.5;
-  white-space: nowrap; /* Prevent text wrapping */
-  overflow: hidden; /* Hide any overflowing text */
-}
-
-/* Right section image container */
 .home .right .img {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%; /* Adjust width to be responsive */
+  max-width: 350px; /* Limit maximum width */
 }
 
 .home .right .img img {
@@ -149,257 +102,184 @@ body {
   animation-iteration-count: infinite;
 }
 
-/* Keyframes for rotating border and shadow effect */
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column; /* Stack elements vertically */
+    height: auto; /* Allow height to adjust based on content */
+    align-items: center; /* Center items */
+  }
+
+  .home .left {
+    width: 90%; /* Adjust width on smaller screens */
+    margin: 10px 0; /* Add vertical spacing */
+  }
+
+  .home .right .img {
+    max-width: 90%; /* Adjust maximum width */
+  }
+
+  .home .right .img img {
+    height: 200px; /* Adjust image size */
+    width: 200px; /* Adjust image size */
+  }
+}
+
 @keyframes superman {
   0% {
     border-color: blue;
     transform: translate(0, 0px);
     box-shadow: 10px 10px 100px 50px blue;
   }
+
   25% {
     border-color: rgb(239, 244, 11);
     box-shadow: 10px 10px 100px 50px rgb(239, 244, 11);
   }
+
   50% {
     border-color: rgb(12, 12, 199);
     transform: translate(0, 10px);
     box-shadow: 10px 10px 100px 50px rgb(12, 12, 199);
   }
+
   75% {
     border-color: rgb(130, 217, 160);
     box-shadow: 10px 10px 100px 50px rgb(130, 217, 160);
   }
+
   100% {
     border-color: rgb(50, 55, 205);
-    transform: translate(0, 0px);
+    transform: translate(0, -0px);
     box-shadow: 10px 10px 100px 50px rgb(50, 55, 205);
   }
 }
 
-/* Responsive Styles */
-@media (max-width: 1024px) {
-  .home {
-    flex-direction: column;
-    height: auto;
-    text-align: center;
-  }
+/* Experience Section */
 
-  .home .left {
-    width: 90%; /* Adjust width for smaller screens */
-    margin-bottom: 20px;
-    min-height: 250px; /* Adjust height for smaller screens */
-  }
-
-  .home .right .img img {
-    height: 240px;
-    width: 240px;
-  }
-}
-
-@media (max-width: 768px) {
-  .home .left {
-    padding: 20px;
-    width: 100%; /* Full width on smaller screens */
-    min-height: 200px;
-  }
-
-  .home .right .img img {
-    height: 200px;
-    width: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .home {
-    padding: 10px;
-  }
-
-  .home .left {
-    padding: 15px;
-    min-height: 150px;
-  }
-
-  .home .right .img img {
-    height: 150px;
-    width: 150px;
-  }
-}
-
-  /* ************************************HOME PAGE END**************************************** */
-  /* EXPERIENCE SECTIONNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN */
-  /* General container styling */
 .ex {
-  width: 100%;
-  max-width: 900px; /* Set a maximum width for larger screens */
-  margin: auto;
-  padding: 20px;
+  width: 100%; /* Make container width responsive */
+  max-width: 900px; /* Limit maximum width */
+  margin: 0 auto; /* Center horizontally */
 }
 
-/* Item styling */
 .ex-items {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--bg-color);
-  margin: 20px auto; /* Center the items horizontally */
+  margin: 20px;
   padding: 30px;
-  width: 100%; /* Make width 100% to fit within the container */
-  max-width: 800px; /* Set a maximum width */
+  width: 100%; /* Make width responsive */
+  max-width: 800px; /* Limit maximum width */
   border-radius: 10px;
   border: 1px solid yellow;
   box-shadow: var(--box-shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
 }
 
-/* Hover effect */
 .ex-items:hover {
-  transform: translateY(-10px); /* Lift effect on hover */
-  box-shadow: 0 10px 20px rgba(255, 255, 0, 0.5); /* Stronger shadow on hover */
+  transform: translateY(-10px) scale(1.03); /* Pop up effect with slight scale */
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow to emphasize the lift */
 }
 
-/* Responsive Styles */
+/* Media query for smaller screens */
 @media (max-width: 768px) {
   .ex-items {
     flex-direction: column; /* Stack items vertically on smaller screens */
-    padding: 20px;
+    padding: 20px; /* Adjust padding */
+    margin: 10px; /* Adjust margin */
   }
 }
-
-  
-  /* Experience End here */
-  /* Skills */
-  /* Skills */
-  .skills {
-    width: 100%;
-    max-width: 1200px; /* Set a max width for better responsiveness */
-    margin: auto;
-    padding: 20px;
-  }
-  
-  .skills h1 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2.5rem;
-  }
-  
-  .skills .items {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px; /* Add spacing between items */
-  }
-  
-  .skills .items .item {
-    width: calc(33.33% - 40px); /* Adjust for 3 items per row, considering gaps */
-    background-color: black;
-    margin: 20px 0;
-    text-align: center;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid yellow;
-    box-shadow: var(--box-shadow);
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Transition for hover */
-  }
-  
-  .skills .items .item:hover {
-    transform: translateY(-10px); /* Lift effect on hover */
-    background-color: #222; /* Slightly change background on hover */
-  }
-  
-  .skills .items .item img {
-    width: 70px;
-    margin-bottom: 15px;
-  }
-  
-  .skills .items .item h3 {
-    color: white;
-    font-size: 1.25rem;
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 1024px) {
-    .skills .items .item {
-      width: calc(50% - 40px); /* Adjust to 2 items per row on medium screens */
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .skills .items .item {
-      width: calc(100% - 40px); /* Adjust to 1 item per row on small screens */
-    }
-  
-    .skills h1 {
-      font-size: 2rem; /* Make heading smaller on small screens */
-    }
-  }
-  /* Skills end here */
-  /* Projects start */
-  /* General container styling */
-.projects h1 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
+.ex-items .left img {
+  width: 100px; /* Control the size of the image */
+  height: 100px; /* Ensure the height matches the width for a perfect circle */
+  border-radius: 50%; /* Make the image round */
+  object-fit: cover; /* Ensure the image fits within the circular frame */
+  border: 2px solid yellowgreen; /* Optional: Add a border around the image */
 }
 
-.project-card {
-  width: 100%; /* Make the card take up 100% of its container */
-  max-width: 18rem; /* Ensure a maximum width for larger screens */
-  border: 1px solid yellow;
-  box-shadow: 5px 5px 10px rgba(101, 175, 10, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
-}
-
-.project-card:hover {
-  transform: translateY(-10px); /* Card lift effect on hover */
-  box-shadow: 10px 10px 20px rgba(101, 175, 10, 0.7); /* Increase shadow on hover */
-}
-
-.project-card .img img {
-  width: 100%;
-  height: auto;
-  max-width: 250px;
-  max-height: 200px;
-  border: 2px solid yellow;
-  border-radius: 10px;
-}
-
-/* Responsiveness */
-@media (max-width: 1200px) {
-  .project-card {
-    max-width: 100%; /* Make cards responsive for larger screens */
-  }
-}
-
-@media (max-width: 992px) {
-  .project-card {
-    max-width: 100%; /* Ensure responsive behavior on medium screens */
-  }
-}
-
+/* Media query to adjust the size on smaller screens */
 @media (max-width: 768px) {
-  .project-card {
-    max-width: 100%; /* One card per row on small screens */
+  .ex-items .left img {
+    width: 80px; /* Smaller image for mobile */
+    height: 80px;
   }
 }
 
-@media (max-width: 576px) {
-  .project-card {
-    max-width: 100%; /* Ensure proper sizing on extra small screens */
+
+
+/* Skills */
+
+/* Container for skills */
+.skills {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Flexbox for aligning items in a row */
+.skills .items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Optional: gap between items */
+}
+
+/* Styling individual skill item */
+.skills .items .item {
+  width: calc(33.33% - 40px); /* Three items per row, adjusting for margins */
+  background-color: black;
+  margin: 10px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid yellow;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+/* Image inside each skill item */
+.skills .items .item img {
+  width: 70px;
+  transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+
+/* Hover effect for skill item */
+.skills .items .item:hover {
+  transform: translateY(-10px) scale(1.05); /* Pop up and scale effect */
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+/* Hover effect for skill image */
+.skills .items .item:hover img {
+  transform: scale(1.1); /* Slightly enlarge the image */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .skills .items .item {
+    width: calc(50% - 20px); /* Two items per row on tablets and smaller devices */
   }
 }
-/* Projects end here */
-/* Contact page css start from here */
-/* Contact Icon Container */
+
+@media (max-width: 480px) {
+  .skills .items .item {
+    width: 100%; /* Full width on mobile devices */
+    margin: 10px 0;
+  }
+}
+
+/* Contact */
+
 .contact-icon {
   height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap; /* Ensure that the icons wrap on smaller screens */
-  padding: 20px;
 }
 
-/* Contact Icon Items */
 .contact-icon .items {
   background-color: black;
   margin: 10px;
@@ -410,47 +290,66 @@ body {
   align-items: center;
   border-radius: 100%;
   border: 2px solid yellow;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover Effect for Contact Items */
 .contact-icon .items:hover {
   background-color: var(--bg-color);
-  transform: translateY(-10px); /* Lift effect on hover */
-  box-shadow: 5px 5px 15px rgba(255, 255, 0, 0.6); /* Box shadow for hover */
+  box-shadow: var(--box-shadow);
 }
 
-/* Icon Style */
 .contact-icon .items .icons {
   font-size: 2rem;
-  color:#D3D3D3
+}
+/* certification */
+/* Certifications Section */
+
+.certs {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
 }
 
-/* Responsiveness */
+.cert-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-color);
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid yellow;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.cert-item:hover {
+  transform: translateY(-10px) scale(1.03); /* Pop up effect with slight scale */
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow to emphasize the lift */
+}
+
+.cert-item .left {
+  flex: 1;
+}
+
+.cert-item .right a {
+  color: yellow;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cert-item .right a:hover {
+  text-decoration: underline;
+}
+
+/* Media query for smaller screens */
 @media (max-width: 768px) {
-  .contact-icon {
-    height: auto; /* Adjust height on small screens */
-    padding: 10px;
+  .cert-item {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    text-align: center;
   }
 
-  .contact-icon .items {
-    height: 60px; /* Slightly reduce the icon size for mobile */
-    width: 60px;
-  }
-
-  .contact-icon .items .icons {
-    font-size: 1.75rem; /* Adjust font size for smaller screens */
+  .cert-item .right {
+    margin-top: 10px; /* Add spacing between description and link */
   }
 }
-
-@media (max-width: 576px) {
-  .contact-icon .items {
-    height: 50px; /* Further reduce icon size on extra small screens */
-    width: 50px;
-  }
-
-  .contact-icon .items .icons {
-    font-size: 1.5rem; /* Smaller icon for extra small screens */
-  }
-}
-/*  End here */
+/*  */

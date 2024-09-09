@@ -15,6 +15,9 @@ const Navbar = () => {
           <a href="#experience" className="nav_items">
             Experience
           </a>
+          <a href="#certifications" className="nav_items">
+            Certifications/Achievements
+          </a>
           <a href="#skills" className="nav_items">
             Skills
           </a>

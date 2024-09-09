@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import pdf from "../pdf/resume.pdf";
+import pdf from "../pdf/AIML_vanraj.pdf";
 import hero from "./data/hero.json";
 import Typed from "typed.js";
 
@@ -9,9 +9,9 @@ const Home = () => {
     const options = {
       strings: [
         "Welcome to my profile",
-        "My Name is John Doe",
+        "My Name is Vanraj",
         "I'm full stack developer",
-        "Androide Developer (React Native)",
+        "I'm AI ML engineer",
       ],
       typeSpeed: 50,
       backSpeed: 50,
@@ -33,7 +33,7 @@ const Home = () => {
 
           <a
             href={pdf}
-            download="Resume.pdf"
+            download="AIML.pdf"
             className="btn btn-outline-warning my-3"
           >
             Download Resume

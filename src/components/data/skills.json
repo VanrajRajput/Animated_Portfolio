@@ -20,19 +20,31 @@
     "imageSrc": "skills/node.png"
   },
   {
-    "title":"Firebase",
-    "imageSrc":"skills/firebase.png"
-  },
-  {
-    "title": "GraphQL",
-    "imageSrc": "skills/graphql.png"
-  },
-  {
     "title": "MongoDB",
     "imageSrc": "skills/mongodb.png"
   },
   {
-    "title": "Figma",
-    "imageSrc": "skills/figma.png"
+    "title": "SQL",
+    "imageSrc": "skills/sql.png"
+  },
+  {
+    "title": "Java",
+    "imageSrc": "skills/java.png"
+  },
+  {
+    "title": "Python",
+    "imageSrc": "skills/python.png"
+  },
+  {
+    "title": "Artificial Intelligence",
+    "imageSrc": "skills/AI.png"
+  },
+  {
+    "title": "GitHub",
+    "imageSrc": "skills/gothub.png"
+  },
+  {
+    "title": "Django",
+    "imageSrc": "skills/Django.png"
   }
 ]
